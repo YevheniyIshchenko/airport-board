@@ -19,7 +19,7 @@ const Button = () => {
             to={`/departure/${currentDay}${search}`}
           >
             <i className='fas fa-plane-departure'></i>
-            <span className='directions__list__item__text'>Departure</span>
+            <span className='directions__list__item__text'>Departures</span>
           </Link>
         </li>
         <li className={`directions__list__item ${arrivalBtn}`}>
@@ -28,7 +28,7 @@ const Button = () => {
             to={`/arrival/${currentDay}${search}`}
           >
             <i className='fas fa-plane-arrival'></i>
-            <span className='directions__list__item__text'>Arrival</span>
+            <span className='directions__list__item__text'>Arrivals</span>
           </Link>
         </li>
       </ul>
