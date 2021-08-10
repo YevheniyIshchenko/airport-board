@@ -1,0 +1,83 @@
+.table {
+  display: flex;
+  justify-content: center;
+  width: 1120px;
+}
+.terminal-field__elem__a {
+  display: block;
+  color: #63c745;
+  font-weight: 700;
+  border: 1px solid #63c745;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+}
+.terminal-field__elem__d {
+  display: block;
+  color: #1eb7ee;
+  font-weight: 700;
+  border: 1px solid #1eb7ee;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+}
+.logo {
+  margin-right: 10px;
+  &__img {
+    width: 68px;
+    height: 38px;
+  }
+}
+.table-striped {
+  background-color: #fff;
+  flex: 1;
+  border-collapse: collapse;
+  font-size: 22px;
+
+  &__head {
+    text-align: left;
+    color: #95989a;
+    font-size: 16px;
+    font-weight: 600;
+    &__item {
+      padding: 12px;
+    }
+  }
+  &__body {
+    &__row {
+      height: 70px;
+      padding: 0;
+      &__terminal-field {
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        border: 0;
+      }
+      &__company-name {
+        display: flex;
+        align-items: center;
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba(0, 102, 135, 0.1);
+      }
+      &td {
+        padding: 16px 10px;
+      }
+    }
+  }
+}
+.noFlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 30px;
+  font-weight: 700;
+}
