@@ -19,12 +19,14 @@ export const newFlightStatus = (el) => {
       return `Boarding`;
     case "GC":
       return `Gate closed`;
+    case "DL":
+      return `Delayed till ${moment(el.timeLandCalc).format("LT")}`;
     default:
       return el.status;
   }
 };
 
-export const filterFlightLidt = (flights, queryString) => {
+export const filterFlightList = (flights, queryString) => {
   return flights.filter(
     !queryString["?search"]
       ? (el) =>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
 import qs from "qs";
-import { newFlightStatus, filterFlightLidt } from "../../flights.utils";
+import { newFlightStatus, filterFlightList } from "../../flights.utils";
 import moment from "moment";
 import "./flightsList.scss";
 
@@ -9,12 +9,12 @@ const FlightsList = ({ flights, getFlightsList }) => {
   const { search } = useLocation();
 
   const queryString = qs.parse(search, { parameterLimit: 1 });
-  
+
   useEffect(() => {
     getFlightsList();
   }, [search]);
-  
-  const newFlights = filterFlightLidt(flights, queryString);
+
+  const newFlights = filterFlightList(flights, queryString);
 
   return newFlights.length === 0 ? (
     <div className='noFlight'>NO Flight</div>
