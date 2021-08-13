@@ -22,19 +22,3 @@ export const getFlightsList = (direction) => {
   };
   return thunkaAction;
 };
-export const getFlightsListDeparture = () => {
-  const thunkaAction = function (dispatch) {
-    fetchFlightsListDeparture().then((tasksList) =>
-      dispatch(tasksListRecieved(tasksList))
-    );
-  };
-  return thunkaAction;
-};
-export const getFlightsListArrivals = () => {
-  const thunkaAction = function (dispatch) {
-    fetchFlightsListArrival().then((tasksList) =>
-      dispatch(tasksListRecieved(tasksList))
-    );
-  };
-  return thunkaAction;
-};

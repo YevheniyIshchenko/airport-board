@@ -11,6 +11,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Route component={Search}></Route>
+
         <Button />
         <Switch>
           <Route path='/departure' component={FlightsList} />

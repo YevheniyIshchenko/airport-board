@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./search.scss";
 
-const Search = () => {
+const Search = ({ match }) => {
   const [value, setValue] = useState("");
+  console.log(match);
+
   const handleChange = (event) => {
     setValue(event.target.value);
   };

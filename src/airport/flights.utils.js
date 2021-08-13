@@ -26,8 +26,7 @@ export const newFlightStatus = (el) => {
   }
 };
 
-export const filterFlightList = (flights, queryString, ) => {
-  debugger;
+export const filterFlightList = (flights, queryString) => {
   return flights.filter(
     !queryString["?search"]
       ? (el) =>

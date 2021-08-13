@@ -16,7 +16,7 @@ const FlightsList = ({ flights, getFlightsList }) => {
   const queryString = qs.parse(search, { parameterLimit: 1 });
   useEffect(() => {
     getFlightsList(direction);
-  }, [direction]);
+  }, [direction, search]);
 
   const newFlights = filterFlightList(flights, queryString, direction);
 
