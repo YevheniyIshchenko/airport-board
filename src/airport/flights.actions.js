@@ -1,4 +1,3 @@
-import { flightsListSelector } from "./flights.selectors";
 import {
   fetchFlightsList,
   fetchFlightsListArrival,
@@ -15,9 +14,9 @@ export const tasksListRecieved = (flightsList) => {
   };
 };
 
-export const getFlightsList = () => {
+export const getFlightsList = (direction) => {
   const thunkaAction = function (dispatch) {
-    fetchFlightsList().then((tasksList) =>
+    fetchFlightsList(direction).then((tasksList) =>
       dispatch(tasksListRecieved(tasksList))
     );
   };

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "lint": "eslint",
+    "test": "react-scripts test"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +35,8 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "core-js": "^3.15.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "qs": "^6.10.1",
@@ -40,6 +44,7 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
+    "react-scripts-test": "^0.6.0",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"

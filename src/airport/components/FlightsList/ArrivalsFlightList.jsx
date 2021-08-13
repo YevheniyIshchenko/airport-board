@@ -13,5 +13,4 @@ const mapState = (state) => {
   };
 };
 
-// export default connect(mapState, mapDispatch)(ArrivalsFlightsList);
 export default connect(mapState, mapDispatch)(FlightsList);

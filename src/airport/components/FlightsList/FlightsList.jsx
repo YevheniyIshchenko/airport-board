@@ -1,20 +1,24 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
 import qs from "qs";
+import { connect } from "react-redux";
+import { flightsListSelector } from "../../flights.selectors";
+import * as flightsActions from "../../flights.actions";
 import { newFlightStatus, filterFlightList } from "../../flights.utils";
 import moment from "moment";
 import "./flightsList.scss";
 
 const FlightsList = ({ flights, getFlightsList }) => {
-  const { search } = useLocation();
+  const { pathname, search } = useLocation();
+
+  const direction = pathname.split("/")[1];
 
   const queryString = qs.parse(search, { parameterLimit: 1 });
-
   useEffect(() => {
-    getFlightsList();
-  }, [search]);
+    getFlightsList(direction);
+  }, [direction]);
 
-  const newFlights = filterFlightList(flights, queryString);
+  const newFlights = filterFlightList(flights, queryString, direction);
 
   return newFlights.length === 0 ? (
     <div className='noFlight'>NO Flight</div>
@@ -74,4 +78,14 @@ const FlightsList = ({ flights, getFlightsList }) => {
   );
 };
 
-export default FlightsList;
+const mapDispatch = {
+  getFlightsList: flightsActions.getFlightsList,
+};
+
+const mapState = (state) => {
+  return {
+    flights: flightsListSelector(state),
+  };
+};
+
+export default connect(mapState, mapDispatch)(FlightsList);
